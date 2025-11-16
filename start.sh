@@ -163,7 +163,7 @@ function provisioning_get_files() {
 
     printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
     for url in "${!arr[@]}"; do
-        printf "Downloading: %s\n" "${url}"
+        printf "Downloading: %s (%s)\n" "${arr[$url]}" "${url}"
         provisioning_download "${url}" "${dir}" "${arr[$url]}"
         printf "\n"
     done
