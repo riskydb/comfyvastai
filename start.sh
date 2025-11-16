@@ -88,6 +88,121 @@ function provisioning_start() {
     provisioning_get_apt_packages
     provisioning_get_nodes
     provisioning_get_pip_packages
+
+
+
+    #CHECKPOINT_MODELS
+    dir="${COMFYUI_DIR}/models/checkpoints"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#CHECKPOINT_MODELS[@]}" "$dir"
+    for url in "${!CHECKPOINT_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${CHECKPOINT_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${CHECKPOINT_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+    #UNET_MODELS
+    dir="${COMFYUI_DIR}/models/unet" 
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#UNET_MODELS[@]}" "$dir"
+    for url in "${!UNET_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${UNET_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${UNET_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+    #LORA_MODELS
+    dir="${COMFYUI_DIR}/models/lora"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#LORA_MODELS[@]}" "$dir"
+    for url in "${!LORA_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${LORA_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${LORA_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+    #CONTROLNET_MODELS
+    dir="${COMFYUI_DIR}/models/controlnet"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#CONTROLNET_MODELS[@]}" "$dir"
+    for url in "${!CONTROLNET_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${CONTROLNET_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${CONTROLNET_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+    #VAE_MODELS
+    dir="${COMFYUI_DIR}/models/vae"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#VAE_MODELS[@]}" "$dir"
+    for url in "${!VAE_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${VAE_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${VAE_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+
+    #ESRGAN_MODELS
+    dir="${COMFYUI_DIR}/models/esrgan"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#ESRGAN_MODELS[@]}" "$dir"
+    for url in "${!ESRGAN_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${ESRGAN_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${ESRGAN_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+    #UPSCALE_MODELS
+    dir="${COMFYUI_DIR}/models/upscale_models"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#UPSCALE_MODELS[@]}" "$dir"
+    for url in "${!UPSCALE_MODELS[@]}"; do
+        printf "Downloading: %s (%s)\n" "${UPSCALE_MODELS[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${UPSCALE_MODELS[$url]}"
+        printf "\n"
+    done
+
+
+
+    #CLIP_VISION
+    dir="${COMFYUI_DIR}/models/clip_vision"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#CLIP_VISION[@]}" "$dir"
+    for url in "${!CLIP_VISION[@]}"; do
+        printf "Downloading: %s (%s)\n" "${CLIP_VISION[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${CLIP_VISION[$url]}"
+        printf "\n"
+    done
+
+
+
+    # IPADAPTER
+    dir="${COMFYUI_DIR}/models/ipadapter"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#IPADAPTER[@]}" "$dir"
+    for url in "${!IPADAPTER[@]}"; do
+        printf "Downloading: %s (%s)\n" "${IPADAPTER[$url]}" "${url}"
+        provisioning_download "${url}" "${dir}" "${IPADAPTER[$url]}"
+        printf "\n"
+    done
+
+
+    : '
     provisioning_get_files \
         "${COMFYUI_DIR}/models/checkpoints" \
         CHECKPOINT_MODELS
@@ -115,6 +230,7 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/ipadapter" \
         IPADAPTER 
+    '
     provisioning_print_end
 }
 
@@ -159,23 +275,15 @@ function provisioning_get_files() {
     dir="$1"
     mkdir -p "$dir"
     shift
-    local -n arr=$2
-
-    printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
-    for url in "${!arr[@]}"; do
-        printf "Downloading: %s (%s)\n" "${arr[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${arr[$url]}"
-        printf "\n"
-    done
 
     
-    #arr=("$@")
-    #printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
-    #for url in "${arr[@]}"; do
-    #    printf "Downloading: %s\n" "${url}"
-    #    provisioning_download "${url}" "${dir}"
-    #    printf "\n"
-    #done
+    arr=("$@")
+    printf "Downloading %s model(s) to %s...\n" "${#arr[@]}" "$dir"
+    for url in "${arr[@]}"; do
+        printf "Downloading: %s\n" "${url}"
+        provisioning_download "${url}" "${dir}"
+        printf "\n"
+    done
 }
 
 function provisioning_print_header() {
