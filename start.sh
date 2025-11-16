@@ -337,7 +337,7 @@ function provisioning_download() {
     if [[ -n $auth_token ]];then
         printf "Dowloading with Auth-Token %s\n" $auth_token
         #wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1" -O "$3"
-        wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
+        wget --header="Authorization: Bearer $auth_token" -nc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
     else
         #wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1" -O "$3"
         wget -qnc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
