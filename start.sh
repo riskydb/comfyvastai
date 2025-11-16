@@ -36,7 +36,7 @@ declare -A UNET_MODELS=(
 )
 
 declare -A LORA_MODELS=(
-    ["https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SDXL-8steps-CFG-lora.safetensors"]="Hyper-SDXL-8steps-CFG-lora.safetensors"
+    #["https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SDXL-8steps-CFG-lora.safetensors"]="Hyper-SDXL-8steps-CFG-lora.safetensors"
 )
 
 declare -A VAE_MODELS=(
@@ -46,39 +46,39 @@ declare -A ESRGAN_MODELS=(
 )
 
 declare -A CONTROLNET_MODELS=(
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-scribble_pidinet/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-scribble_pidinet.fp16.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-lineart_anime/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-lineart_anime.fp16.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-softedge_hed/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-softedge_hed.fp16.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-canny/resolve/main/noob_sdxl_controlnet_canny.fp16.safetensors"]="noob_sdxl_controlnet_canny.fp16.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-depth_midas-v1-1/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-depth_midas-v1-1.fp16.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-normal/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-normal.fp16.safetensors"
-    ["https://huggingface.co/Laxhar/noob_openpose/resolve/main/openpose_pre.safetensors"]="noobaiXLControlnet_openposeModel.safetensors"
-    ["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-tile/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-tile.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-scribble_pidinet/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-scribble_pidinet.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-lineart_anime/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-lineart_anime.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-softedge_hed/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-softedge_hed.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-canny/resolve/main/noob_sdxl_controlnet_canny.fp16.safetensors"]="noob_sdxl_controlnet_canny.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-depth_midas-v1-1/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-depth_midas-v1-1.fp16.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-normal/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-normal.fp16.safetensors"
+    #["https://huggingface.co/Laxhar/noob_openpose/resolve/main/openpose_pre.safetensors"]="noobaiXLControlnet_openposeModel.safetensors"
+    #["https://huggingface.co/Eugeoter/noob-sdxl-controlnet-tile/resolve/main/diffusion_pytorch_model.fp16.safetensors"]="noob-sdxl-controlnet-tile.fp16.safetensors"
 )
 
 declare -A UPSCALE_MODELS=(
-    ["https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/resolve/main/4x_NMKD-Superscale-SP_178000_G.pth"]="4x_NMKD-Superscale-SP_178000_G.pth"
-    ["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X2_DIV2K.safetensors"]="OmniSR_X2_DIV2K.safetensors"
-    ["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X3_DIV2K.safetensors"]="OmniSR_X3_DIV2K.safetensors"
-    ["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X4_DIV2K.safetensors"]="OmniSR_X4_DIV2K.safetensors"
-    ["https://huggingface.co/Acly/hat/resolve/main/HAT_SRx4_ImageNet-pretrain.pth"]="HAT_SRx4_ImageNet-pretrain.pth"
-    ["https://huggingface.co/Acly/hat/resolve/main/Real_HAT_GAN_sharper.pth"]="Real_HAT_GAN_sharper.pth"
+    #["https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/resolve/main/4x_NMKD-Superscale-SP_178000_G.pth"]="4x_NMKD-Superscale-SP_178000_G.pth"
+    #["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X2_DIV2K.safetensors"]="OmniSR_X2_DIV2K.safetensors"
+    #["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X3_DIV2K.safetensors"]="OmniSR_X3_DIV2K.safetensors"
+    #["https://huggingface.co/Acly/Omni-SR/resolve/main/OmniSR_X4_DIV2K.safetensors"]="OmniSR_X4_DIV2K.safetensors"
+    #["https://huggingface.co/Acly/hat/resolve/main/HAT_SRx4_ImageNet-pretrain.pth"]="HAT_SRx4_ImageNet-pretrain.pth"
+    #["https://huggingface.co/Acly/hat/resolve/main/Real_HAT_GAN_sharper.pth"]="Real_HAT_GAN_sharper.pth"
 )
 
 declare -A CLIP_VISION=(
-    ["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors"]="clip-vision_vit-g.safetensors"
-    ["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors"]="clip-vision_vit-h.safetensors"
+    #["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors"]="clip-vision_vit-g.safetensors"
+    #["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors"]="clip-vision_vit-h.safetensors"
 )
 
 declare -A IPADAPTER=(
-    ["https://huggingface.co/r3gm/noob-ipa/resolve/main/model_G/noobIPAMARK1_mark1.safetensors"]="noobIPAMARK1_mark1.safetensors"
-    ["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors"]="ip-adapter_sdxl_vit-h.safetensors"
+    #["https://huggingface.co/r3gm/noob-ipa/resolve/main/model_G/noobIPAMARK1_mark1.safetensors"]="noobIPAMARK1_mark1.safetensors"
+    #["https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors"]="ip-adapter_sdxl_vit-h.safetensors"
 )
 
 declare -A INPAINT=(
-    ["https://huggingface.co/Acly/MAT/resolve/main/MAT_Places512_G_fp16.safetensors"]="MAT_Places512_G_fp16.safetensors"
-    ["https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/fooocus_inpaint_head.pth"]="fooocus_inpaint_head.pth"
-    ["https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch"]="inpaint_v26.fooocus.patch"
+    #["https://huggingface.co/Acly/MAT/resolve/main/MAT_Places512_G_fp16.safetensors"]="MAT_Places512_G_fp16.safetensors"
+    #["https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/fooocus_inpaint_head.pth"]="fooocus_inpaint_head.pth"
+    #["https://huggingface.co/lllyasviel/fooocus_inpaint/resolve/main/inpaint_v26.fooocus.patch"]="inpaint_v26.fooocus.patch"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -98,7 +98,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#CHECKPOINT_MODELS[@]}" "$dir"
     for url in "${!CHECKPOINT_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${CHECKPOINT_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${CHECKPOINT_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${CHECKPOINT_MODELS[$url]}"
         printf "\n"
     done
 
@@ -110,7 +110,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#UNET_MODELS[@]}" "$dir"
     for url in "${!UNET_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${UNET_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${UNET_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${UNET_MODELS[$url]}"
         printf "\n"
     done
 
@@ -122,7 +122,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#LORA_MODELS[@]}" "$dir"
     for url in "${!LORA_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${LORA_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${LORA_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${LORA_MODELS[$url]}"
         printf "\n"
     done
 
@@ -134,7 +134,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#CONTROLNET_MODELS[@]}" "$dir"
     for url in "${!CONTROLNET_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${CONTROLNET_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${CONTROLNET_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${CONTROLNET_MODELS[$url]}"
         printf "\n"
     done
 
@@ -146,7 +146,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#VAE_MODELS[@]}" "$dir"
     for url in "${!VAE_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${VAE_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${VAE_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${VAE_MODELS[$url]}"
         printf "\n"
     done
 
@@ -159,7 +159,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#ESRGAN_MODELS[@]}" "$dir"
     for url in "${!ESRGAN_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${ESRGAN_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${ESRGAN_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${ESRGAN_MODELS[$url]}"
         printf "\n"
     done
 
@@ -171,7 +171,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#UPSCALE_MODELS[@]}" "$dir"
     for url in "${!UPSCALE_MODELS[@]}"; do
         printf "Downloading: %s (%s)\n" "${UPSCALE_MODELS[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${UPSCALE_MODELS[$url]}"
+        provisioning_download "${url}" "$dir" "${UPSCALE_MODELS[$url]}"
         printf "\n"
     done
 
@@ -184,7 +184,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#CLIP_VISION[@]}" "$dir"
     for url in "${!CLIP_VISION[@]}"; do
         printf "Downloading: %s (%s)\n" "${CLIP_VISION[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${CLIP_VISION[$url]}"
+        provisioning_download "${url}" "$dir" "${CLIP_VISION[$url]}"
         printf "\n"
     done
 
@@ -197,7 +197,7 @@ function provisioning_start() {
     printf "Downloading %s model(s) to %s...\n" "${#IPADAPTER[@]}" "$dir"
     for url in "${!IPADAPTER[@]}"; do
         printf "Downloading: %s (%s)\n" "${IPADAPTER[$url]}" "${url}"
-        provisioning_download "${url}" "${dir}" "${IPADAPTER[$url]}"
+        provisioning_download "${url}" "$dir" "${IPADAPTER[$url]}"
         printf "\n"
     done
 
@@ -260,7 +260,7 @@ function provisioning_get_nodes() {
                 fi
             fi
         else
-            printf "Downloading node: %s...\n" "${repo}"
+            printf "Downloading node: %s to path %s...\n" "${repo}" "${path}"
             git clone "${repo}" "${path}" --recursive
             if [[ -e $requirements ]]; then
                 pip install --no-cache-dir -r "${requirements}"
@@ -335,6 +335,7 @@ function provisioning_download() {
         auth_token="$CIVITAI_TOKEN"
     fi
     if [[ -n $auth_token ]];then
+        printf "Dowloading with Auth-Token %s\n" $auth_token
         #wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1" -O "$3"
         wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -P "$2" "$1" -O "$3"
     else
