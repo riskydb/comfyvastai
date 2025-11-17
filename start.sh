@@ -206,6 +206,19 @@ function provisioning_start() {
     done
 
 
+
+    # INPAINT
+    dir="${COMFYUI_DIR}/models/inpaint"
+    mkdir -p "$dir"
+
+    printf "Downloading %s model(s) to %s...\n" "${#INPAINT[@]}" "$dir"
+    for url in "${!INPAINT[@]}"; do
+        printf "Downloading: %s (%s)\n" "${INPAINT[$url]}" "${url}"
+        provisioning_download "${url}" "$dir" "${INPAINT[$url]}"
+        printf "\n"
+    done
+
+
     : '
     provisioning_get_files \
         "${COMFYUI_DIR}/models/checkpoints" \
@@ -308,10 +321,10 @@ function provisioning_has_valid_hf_token() {
 
     # Check if the token is valid
     if [ "$response" -eq 200 ]; then
-        printf "HF_TOKEN IS VALID!"
+        printf "HF_TOKEN IS VALID!\n"
         return 0
     else
-        printf "HF_TOKEN IS NOT VALID!"
+        printf "HF_TOKEN IS NOT VALID!\n"
         return 1
     fi
 }
@@ -326,16 +339,17 @@ function provisioning_has_valid_civitai_token() {
 
     # Check if the token is valid
     if [ "$response" -eq 200 ]; then
-        printf "CIVITAI_TOKEN IS VALID!"
+        printf "CIVITAI_TOKEN IS VALID!\n"
         return 0
     else
-        printf "CIVITAI_TOKEN IS NOT VALID!"
+        printf "CIVITAI_TOKEN IS NOT VALID!\n"
         return 1
     fi
 }
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
+    auth_token=""
     if [[ -n $HF_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?huggingface\.co(/|$|\?) ]]; then
         auth_token="$HF_TOKEN"
     elif 
