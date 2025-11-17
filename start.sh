@@ -120,7 +120,7 @@ function provisioning_start() {
 
 
     #LORA_MODELS
-    dir="${COMFYUI_DIR}/models/lora"
+    dir="${COMFYUI_DIR}/models/loras"
     mkdir -p "$dir"
 
     printf "Downloading %s model(s) to %s...\n" "${#LORA_MODELS[@]}" "$dir"
