@@ -85,6 +85,10 @@ declare -A INPAINT=(
 
 function provisioning_start() {
     provisioning_print_header
+
+    provisioning_has_valid_hf_token
+    provisioning_has_valid_civitai_token
+    
     provisioning_get_apt_packages
     provisioning_get_nodes
     provisioning_get_pip_packages
@@ -304,8 +308,10 @@ function provisioning_has_valid_hf_token() {
 
     # Check if the token is valid
     if [ "$response" -eq 200 ]; then
+        printf "HF_TOKEN IS VALID!"
         return 0
     else
+        printf "HF_TOKEN IS NOT VALID!"
         return 1
     fi
 }
@@ -320,8 +326,10 @@ function provisioning_has_valid_civitai_token() {
 
     # Check if the token is valid
     if [ "$response" -eq 200 ]; then
+        printf "CIVITAI_TOKEN IS VALID!"
         return 0
     else
+        printf "CIVITAI_TOKEN IS NOT VALID!"
         return 1
     fi
 }
@@ -334,13 +342,18 @@ function provisioning_download() {
         [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$|\?) ]]; then
         auth_token="$CIVITAI_TOKEN"
     fi
+    fpath="$2/$3"
     if [[ -n $auth_token ]];then
         printf "Dowloading with Auth-Token %s\n" $auth_token
+        printf "Dowloading to path %s\n" "$fpath"
         #wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1" -O "$3"
-        wget --header="Authorization: Bearer $auth_token" -nc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
+        #wget --header="Authorization: Bearer $auth_token" -nc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
+        curl -LH "Authorization: Bearer $auth_token" -o "$fpath" $1
     else
         #wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1" -O "$3"
-        wget -qnc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
+        #wget -qnc --content-disposition --show-progress -P "$2" "$1" -O "$3" 2>&1 | grep -i "failed\|error"
+        printf "Dowloading to path %s\n" "$fpath"
+        curl -LH "Authorization: Bearer $auth_token" -o "$fpath" $1
     fi
 }
 
